@@ -31,10 +31,10 @@ class MainComponent extends React.Component {
         // first green green
         for(var i=0; i<width;i=i+30){
             for(var j=0; j<height;j=j+30){
-                this.obstacles.push(new BasicComponent({ctx, x: i, y: 0, color:'green', width: 30, height: 30}));
-                this.obstacles.push(new BasicComponent({ctx, x: 0, y: j, color:'green', width: 30, height: 30}));
+                this.obstacles.push(new BasicComponent({ctx, x: i, y: 0, color:'teal', width: 30, height: 30}));
+                this.obstacles.push(new BasicComponent({ctx, x: 0, y: j, color:'red', width: 30, height: 30}));
                 if(i>=width-30 || j>=height-30)
-                    this.obstacles.push(new BasicComponent({ctx, x: i, y: j, color:'green', width: 30, height: 30}));
+                    this.obstacles.push(new BasicComponent({ctx, x: i, y: j, color:'blue', width: 30, height: 30}));
 
             }
         }
