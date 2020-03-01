@@ -1,6 +1,6 @@
-import AgentComponent from "./AgentComponent";
+import CharacterMonster from "./CharacterMonster";
 
-class Agent2 extends AgentComponent
+class Monster extends CharacterMonster
 {
     constructor(props) {
         super(props);
@@ -80,14 +80,14 @@ class Agent2 extends AgentComponent
         if (result > this.bestValue) {
             this.bestValue = result;
         }
-        document.getElementById("info").innerHTML = "Score : " + this.score + ", Taille memoire : " + this.memorySize + ", nombre Connection :" + this.memoryConnection;
-        document.getElementById("info").innerHTML += "<br/>" + this.displayMemory();
+        document.getElementById("infoMonster").innerHTML = "Score : " + this.score + ", Taille memoire : " + this.memorySize + ", nombre Connection :" + this.memoryConnection;
+        document.getElementById("infoMonster").innerHTML += "<br/>" + this.displayMemory();
     }
 
     choosBestAction() {
         var randomAction = this.randomAction();
         if (randomAction) {
-            console.log("action  debut");
+            console.log("Monster action  debut");
             return randomAction;
         } else {
             var visitedNode = [];
@@ -239,4 +239,4 @@ class Agent2 extends AgentComponent
     }
 }
 
-export default Agent2;
+export default Monster;

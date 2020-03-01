@@ -1,4 +1,4 @@
-class AgentComponent
+class CharacterMonster
 {
     constructor(props){
         const {ctx, x, y, width, height, obstacles} = props;
@@ -8,7 +8,7 @@ class AgentComponent
         this.height = height;
         this.speedX = 5;
         this.speedY = 5;
-	this.orientation= "N";
+	this.orientation= "S";
         this.x = x;
         this.y = y;
         this.listAction = ["forward","turnLeft","turnRight", "touchLeft", "touchRight", "touchForward"];
@@ -22,7 +22,8 @@ class AgentComponent
         //this.ctx.translate(this.x+this.width/2, this.y+this.height/2);        
         //this.ctx.rotate(0.5 * Math.PI);
         var imageObj = new Image();
-        imageObj.src = "navigation-"+this.orientation+".jpg";
+        // imageObj.src = "mario-"+this.orientation+".jpg";
+        imageObj.src = "boo-"+this.orientation+".png";
         var self = this;
         imageObj.onload = function(){
             self.ctx.drawImage( imageObj,
@@ -180,6 +181,15 @@ class AgentComponent
         }
         return false;
     }
+
+    collisionWallExit() {
+        for (var i = 0; i < this.obstacles.length; i += 1) {
+            if (this.crashWith(this.obstacles[i])) {
+                return true;
+            } 
+        }
+        return false;
+    }
     
     crashWith(otherobj) {
         var myleft = this.x;
@@ -207,6 +217,7 @@ class AgentComponent
                 //startGame();
         }
         this.score+=result;
+        console.log("Monster memory : "+ this.memory);
         document.getElementById("info").innerHTML ="Score : "+this.score+", Taille memoire : "+this.memory.length;
     }
     
@@ -263,4 +274,4 @@ class AgentComponent
     }
 }
 
-export default AgentComponent;
+export default CharacterMonster;

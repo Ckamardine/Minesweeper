@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import MainComponent from './components/canvaComponents/MainComponent';
+import MainGame from './components/canvaComponents/MainGame';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Initiation à l'IA</h1>
-          <MainComponent />
+          <h1 className="App-title">Labyrinthe</h1>
+          <MainGame />
         </header>
         <div className="panel">
-            <label>Avancer</label><input id="forwardValue" defaultValue="20"/>
+            <label>Avancer</label><input id="forwardValue" defaultValue="25"/>
             <label>Collision</label><input id="collisionValue" defaultValue="-10"/><br/>
             <label>Tourner à droite</label><input id="turnRightValue" defaultValue="-3"/>
             <label>Tourner à gauche</label><input id="turnLeftValue" defaultValue="-3"/><br/>
@@ -22,7 +22,9 @@ class App extends Component {
             <label>Toucher à droite (vide)</label><input id="touchRightEmptyValue" defaultValue="-1"/><br/>
             <label>Toucher à gauche (mur)</label><input id="touchLeftValue" defaultValue="-2"/>
             <label>Toucher à gauche (vide)</label><input id="touchLeftEmptyValue" defaultValue="-1"/><br/>
-            <div id="info"></div>
+            <div id="info"> Pac-man</div>
+            <div id="infoMonster">Monster</div>
+            
         </div>
       </div>
     );

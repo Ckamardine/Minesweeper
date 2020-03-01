@@ -17,7 +17,9 @@ canvas {
     border:1px solid #d3d3d3;
     background-color: #FFF;
 }
-
+.panel {
+    margin-top: 20px;
+}
 .panel button{
     margin: 20px;
 }
@@ -35,8 +37,20 @@ input{
 
 #info{
     color: yellow;
-    margin-top: 10px;
+    margin-top: 45px;
     font-weight: bolder;
+    font-size: 12px;
+    text-align: left;
+    padding: 10px;
+    float: left;
+    position: absolute;
+    top: 0px;
+}
+#infoMonster{
+    color: yellow;
+    margin-top: 300px;
+    font-weight: bolder;
+    font-size: 12px;
     text-align: left;
     padding: 10px;
     float: left;

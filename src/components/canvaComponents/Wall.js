@@ -1,4 +1,4 @@
-class BasicComponent{
+class Wall{
     constructor(props){
         const {ctx, x, y, color, width, height} = props;
         this.ctx= ctx;
@@ -15,5 +15,5 @@ class BasicComponent{
     }
 }
 
-export default BasicComponent;
+export default Wall;
 
